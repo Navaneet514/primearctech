@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- vinext cross-route prefetch is intentionally bypassed with full document navigation. */
 
 import Image from "next/image";
+import { BUSINESS_CONTACT } from "@/lib/contact";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -737,8 +738,10 @@ function ClosingAudit() {
             <a href={EVIDENCE_LINKS.serviceTitan} target="_blank" rel="noreferrer">ServiceTitan source <ArrowUpRight aria-hidden="true" /></a>
             <a href="/security">Security</a>
             <a href="/privacy">Privacy</a>
+            <a href={`mailto:${BUSINESS_CONTACT.email}`}>Email</a>
+            <a href={BUSINESS_CONTACT.whatsappHref} target="_blank" rel="noreferrer">WhatsApp</a>
           </div>
-          <p className="footer-note">© {new Date().getFullYear()} PrimeArcTech. FieldRelay is a product by PrimeArcTech.</p>
+          <p className="footer-note"><a href={`tel:${BUSINESS_CONTACT.phoneHref}`}>{BUSINESS_CONTACT.phoneDisplay}</a><br />{BUSINESS_CONTACT.location}<br />© {new Date().getFullYear()} PrimeArcTech. FieldRelay is a product by PrimeArcTech.</p>
         </footer>
       </div>
     </section>
